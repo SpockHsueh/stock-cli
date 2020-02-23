@@ -1,0 +1,28 @@
+{
+  "name": "stock",
+  "version": "1.0.0",
+  "description": "The stock cli",
+  "main": "index.js",
+  "bin": {
+    "stock": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpockHsueh/stock-cli.git"
+  },
+  "keywords": [
+    "stock"
+  ],
+  "author": "Spock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpockHsueh/stock-cli/issues"
+  },
+  "homepage": "https://github.com/SpockHsueh/stock-cli#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}

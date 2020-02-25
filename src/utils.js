@@ -5,6 +5,7 @@ const ex_ch = {
   otc: "otc_"
 }
 const Table = require('cli-table3')
+const chalk = require('chalk')
 
 exports.getStockPrice = async (mode, stocks, date) => {
   const stockPriceList = []
@@ -19,20 +20,24 @@ exports.getStockPrice = async (mode, stocks, date) => {
       throw err
     })
 
+  '★'
   const table = new Table({
-    head: ['名字', '開', '高', '低', '量', '漲跌', '更新時間'],
-    colWidths: [15, 8, 8, 8, 8, 8],
+    head: ['名字', '昨收', '開', '高', '低', '量', '漲跌', '更新時間'],
+    colWidths: [15, 10, 10, 10, 10, 10, 10, 10],
     wordWrap: true
   })
   res.msgArray.forEach(item => {
-    const hAndL = `${item.z - item.y}%`
+    let hAndL = item.z - item.y
+    const priceStatus = hAndL > 0 ? chalk.redBright('▲') : chalk.greenBright('▼')
+    hAndL = hAndL > 0 ? chalk.redBright(hAndL.toFixed(2)) : chalk.greenBright(hAndL.toFixed(2))
     table.push([
       item.n,
+      item.y,
       item.o,
       item.h,
       item.l,
       item.v,
-      hAndL,
+      `${priceStatus} ${hAndL}`,
       item.t
     ])
   })

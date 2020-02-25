@@ -7,7 +7,9 @@ const ex_ch = {
 }
 exports.cli = async (argArray) => {
   const args = minimist(argArray.slice(2))
-  console.log(args._[0])
+  console.log('args', args)
+  console.log('args._[0]', args._[1])
+  const stockList = args._[1]
   let cmd = args._[0] || 'help'
 
   if (args.version || args.v) {
@@ -24,8 +26,7 @@ exports.cli = async (argArray) => {
       help(args)
       break
     case 'price':
-      const res = await getStockPrice(ex_ch.tse, 2330)
-      console.log('the price is:', res)
+      await getStockPrice(ex_ch.tse, stockList)
       break
     default:
       console.error(`"${cmd}" is not a valid command!`)

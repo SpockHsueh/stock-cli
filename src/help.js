@@ -3,13 +3,11 @@ const chalk = require('chalk')
 const menus = {
   main: `
   
-${chalk.greenBright('weather [command] <options>')}
+${chalk.greenBright('stock [command]')}
 
-  ${chalk.blueBright('now')} ................ show weather for now
-  ${chalk.blueBright('forecast')} ........... show weather forecast
-  ${chalk.blueBright('config')}.............. set API key, default city ID, default temperature units
-  ${chalk.blueBright('version')} ............ show package version
-  ${chalk.blueBright('help')} ............... show help menu for a command
+  ${chalk.greenBright('price stock name')} ................ show the price, ${chalk.yellowBright('ex: stock 2330')}
+  ${chalk.greenBright('price stock name stock name')} ........... show the price, ${chalk.yellowBright('ex: stock 2330 1101')} 
+  ${chalk.greenBright('help')} ............... show help menu for a command
 `
 }
 

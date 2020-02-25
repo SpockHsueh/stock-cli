@@ -6,21 +6,28 @@ const ex_ch = {
 }
 const Table = require('cli-table3')
 const chalk = require('chalk')
+const loading = require('loading-cli')
 
-exports.getStockPrice = async (mode, stocks, date) => {
-  const stockPriceList = []
-  if (!mode && !stockList) {
+exports.getStockPrice = async (stocks) => {
+
+  if (!stocks) {
     console.log('Input valid!')
   }
 
-  const queryString = getQueryString(mode = ex_ch.tse, stocks)
-  const res = await fetch(`${priceUrl}${queryString}`)
+  const load = loading("loading...").start()
+  const queryStrings = getQueryStrings(mode = ex_ch.tse, stocks)
+  const res = await fetch(`${priceUrl}${queryStrings}`)
     .then(res => res.json())
     .catch(err => {
-      throw err
+      console.log(err)
+      return
     })
 
-  '★'
+  if (res.rtcode == 9999 || res.msgArray.length == 0) {
+    load.stop()
+    console.log('Input valid or stock name wrong!')
+    return
+  }
   const table = new Table({
     head: ['名字', '昨收', '開', '高', '低', '量', '漲跌', '更新時間'],
     colWidths: [15, 10, 10, 10, 10, 10, 10, 10],
@@ -41,18 +48,16 @@ exports.getStockPrice = async (mode, stocks, date) => {
       item.t
     ])
   })
+  load.stop()
   console.log(table.toString())
 }
 
-const getQueryString = (mode, stock) => {
-  return `${mode}${stock}.tw`
-}
-
-const getQueryStrings = (mode, stocks, date) => {
+const getQueryStrings = (mode, stocks) => {
   let queryString = ''
+  stocks.splice(0, 1);
   stocks.forEach(item => {
-    queryString += `${mode}${stock}.tw_${date}|`
+    queryString += `${mode}${item}.tw|`
   })
-  return queryStr.substr(0, queryStr.length - 1)
+  return queryString.substr(0, queryString.length - 1)
 }
 

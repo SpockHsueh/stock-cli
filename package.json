@@ -1,6 +1,6 @@
 {
   "name": "best-stock-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A stock CLI app in Node.js. The app checks stock price in command line.",
   "main": "index.js",
   "bin": {

@@ -2,7 +2,7 @@
 
 A weather CLI app in Node.js. The app checks weather in command line.
 
-[![npm](https://img.shields.io/npm/v/best-stock-cli.svg?style=flat-square](https://www.npmjs.com/package/best-stock-cli)
+[![npm](https://img.shields.io/npm/v/best-stock-cli.svg?style=flat-square)](https://www.npmjs.com/package/best-stock-cli)
 
 
 ## Usages
@@ -29,6 +29,7 @@ stock help => show help menu for a command
 
 ### `custom stock list price`
 
-#### `stock list myFav`
+#### `First: create your list using command stock save myFav 2330 1101 2341...`
+#### `Than stock list myFav`
 <img src="./stock-cli-list.png" width="650">
 

@@ -5,8 +5,10 @@ const menus = {
   
 ${chalk.greenBright('stock [command]')}
 
-  ${chalk.greenBright('price stock name')} ................ show the price, ${chalk.yellowBright('ex: stock 2330')}
-  ${chalk.greenBright('price stock name stock name')} ........... show the price, ${chalk.yellowBright('ex: stock 2330 1101')} 
+  ${chalk.greenBright('price stockName')} ................ show the price, ${chalk.yellowBright('ex: stock 2330')}
+  ${chalk.greenBright('price stockName stockName')} ........... show the price, ${chalk.yellowBright('ex: stock 2330 1101')} 
+  ${chalk.greenBright('save listName stockName')} ................ save the custom stock list, ${chalk.yellowBright('ex: stock save myFavorite 2330 1101')}
+  ${chalk.greenBright('list listName')} ................ show the price from your list, ${chalk.yellowBright('ex: stock list myFavorite')}
   ${chalk.greenBright('help')} ............... show help menu for a command
 `
 }

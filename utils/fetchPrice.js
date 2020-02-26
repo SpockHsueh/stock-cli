@@ -20,6 +20,7 @@ exports.getStockPrice = async (stocks) => {
     .then(res => res.json())
     .catch(err => {
       console.log(err)
+      load.stop()
       return
     })
 
@@ -54,7 +55,6 @@ exports.getStockPrice = async (stocks) => {
 
 const getQueryStrings = (mode, stocks) => {
   let queryString = ''
-  stocks.splice(0, 1);
   stocks.forEach(item => {
     queryString += `${mode}${item}.tw|`
   })

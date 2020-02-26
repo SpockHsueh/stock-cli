@@ -16,15 +16,18 @@ stock help => show help menu for a command
 
 ## Screenshots
 
-### `main menu`
+### `main menu` 
 
+#### `stock help`
 <img src="./stock-cli-menu.png" width="650">
 
 ### `stock price`
 
+#### `stock price 2330`
 <img src="./stock-cli-price.png" width="650">
 
 ### `custom stock list price`
 
+#### `stock list myFav`
 <img src="./stock-cli-list.png" width="650">
 

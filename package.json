@@ -1,7 +1,7 @@
 {
-  "name": "stock",
+  "name": "best-stock-cli",
   "version": "1.0.0",
-  "description": "The stock cli",
+  "description": "A stock CLI app in Node.js. The app checks stock price in command line.",
   "main": "index.js",
   "bin": {
     "stock": "./index.js"
@@ -14,9 +14,10 @@
     "url": "git+https://github.com/SpockHsueh/stock-cli.git"
   },
   "keywords": [
-    "stock"
+    "stock",
+    "cli"
   ],
-  "author": "Spock",
+  "author": "Spock Hsueh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SpockHsueh/stock-cli/issues"

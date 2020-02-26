@@ -2,7 +2,8 @@
 
 A weather CLI app in Node.js. The app checks weather in command line.
 
-![npm](https://img.shields.io/npm/v/best-stock-cli.svg?style=flat-square](https://www.npmjs.com/package/best-stock-cli)
+[![npm](https://img.shields.io/npm/v/best-stock-cli.svg?style=flat-square](https://www.npmjs.com/package/best-stock-cli)
+
 
 ## Usages
 
